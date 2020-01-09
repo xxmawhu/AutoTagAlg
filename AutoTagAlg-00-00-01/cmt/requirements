@@ -1,0 +1,27 @@
+package AutoTagAlg
+author Xinxin Ma <maxx@ihep.ac.cn>
+author HaoKai Sun <sunhk@ihep.ac.cn>
+
+use BesPolicy        BesPolicy-*
+
+use GaudiInterface   GaudiInterface-*   External
+
+use McTruth             McTruth-*               Event
+use EventModel          EventModel-*            Event
+use BesDChain           BesDChain-*           Event
+use EvtRecEvent         EvtRecEvent-*           Event
+use ParticleID          ParticleID-*            Analysis
+use VertexFit           VertexFit-*             Analysis
+
+use McDecayModeSvc      McDecayModeSvc-*        Utilities
+use GammaConv           GammaConv-*             Utilities
+use DataBaseReader DataBaseReader-* Utilities
+
+use MCTruthMatchSvc MCTruthMatchSvc-00-00-02 Utilities
+use BesStdSelector BesStdSelector-00-00-01 Utilities
+use HadronInfo HadronInfo-00-00-01 Utilities
+
+macro_append fflags "  -lrt"
+
+apply_pattern component_library 
+library AutoTagAlg *.cxx *.cpp components/*.cxx util/*.cxx  Selector/*.cxx

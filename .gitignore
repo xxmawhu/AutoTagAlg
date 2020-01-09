@@ -1,3 +1,15 @@
+# LSP Projectile
+.ccls-cache/
+.ccls-cache*
+.projectile
+
+# sshfs
+.fuse_hidden*
+
+# CMT config
+cleanup.*sh
+setup.*sh
+
 # Prerequisites
 *.d
 
@@ -30,3 +42,11 @@
 *.exe
 *.out
 *.app
+
+# generate by cmt
+cmt/*.sh
+cmt/*.csh
+Makefile
+AutoTagAlg-00-00-01/LICENSE
+AutoTagAlg-00-00-01/README.org
+AutoTagAlg-00-00-01/.git*
