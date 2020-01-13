@@ -1,0 +1,19 @@
+#include "$ABSCORROOT/share/jobOptions_AbsCor.txt"
+// pi0 and eta
+//#include "$PI0ETATOGGRECALGROOT/share/jobOptions_Pi0EtaToGGRec.txt"
+// Pi0EtaToGGRecAlg.PhotonInBarrelOrEndcap = true;
+// Pi0EtaToGGRecAlg.PhotonApplyTimeCut = true;
+// Pi0EtaToGGRecAlg.RejectBothInEndcap = true;
+
+ApplicationMgr.DLLs += {"AutoTagAlg"};
+ApplicationMgr.TopAlg += { "AutoTagAlg" };
+
+ApplicationMgr.DLLs += {"MCTruthMatchSvc" };
+ApplicationMgr.DLLs += {"McDecayModeSvc" };
+//ApplicationMgr.DLLs += {"Selector" };
+ApplicationMgr.ExtSvc      += {"McDecayModeSvc/McDecayModeSvc"};
+McDecayModeSvc.pdt_file = "$BESEVTGENROOT/share/pdt.table";
+McDecayModeSvc.NoTracingList = { 321, -321, 211, -211 };
+VeeVertex.LambdaReconstruction = false;
+VeeVertex.KShortReconstruction = true;
+
