@@ -19,14 +19,21 @@ class SignalCandidate : public DCSelectionFunction<CDDecay> {
     SignalCandidate();
 
     bool operator()(CDDecay& aComb);
+    void SetEcm(double Ecm) {
+        m_p4Beam = HepLorentzVector(0.011*Ecm, 0, 0, Ecm);
+    }
 
    private:
     SignalCandidate(const SignalCandidate&);
     const SignalCandidate& operator=(const SignalCandidate&);
+    HepLorentzVector m_p4Beam;
 
     double m_minMass;
     double m_maxMass;
     double m_chisq;
+
+    double m_minRecMass;
+    double m_maxRecMass;
 };
 extern SignalCandidate localSignalCandidate;
 

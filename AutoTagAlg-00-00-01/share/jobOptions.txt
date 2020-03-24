@@ -1,19 +1,23 @@
 #include "$ABSCORROOT/share/jobOptions_AbsCor.txt"
-// pi0 and eta
-//#include "$PI0ETATOGGRECALGROOT/share/jobOptions_Pi0EtaToGGRec.txt"
-// Pi0EtaToGGRecAlg.PhotonInBarrelOrEndcap = true;
-// Pi0EtaToGGRecAlg.PhotonApplyTimeCut = true;
-// Pi0EtaToGGRecAlg.RejectBothInEndcap = true;
+#include "$BESSTDSELECTORROOT/share/jobOptions.txt"
+#include "$PHOTONCONVERSVCROOT/share/jobOptions.txt"
+#include "$DCLISTSVCROOT/share/jobOptions.txt"
 
 ApplicationMgr.DLLs += {"AutoTagAlg"};
 ApplicationMgr.TopAlg += { "AutoTagAlg" };
 
 ApplicationMgr.DLLs += {"MCTruthMatchSvc" };
 ApplicationMgr.DLLs += {"McDecayModeSvc" };
-//ApplicationMgr.DLLs += {"Selector" };
-ApplicationMgr.ExtSvc      += {"McDecayModeSvc/McDecayModeSvc"};
-McDecayModeSvc.pdt_file = "$BESEVTGENROOT/share/pdt.table";
+ApplicationMgr.DLLs += {"MCTruthInfo" };
+ApplicationMgr.DLLs += {"BeamInfoSvc" };
+// ApplicationMgr.DLLs += {"PhotonConverSvc" };
+// ApplicationMgr.ExtSvc += {"McDecayModeSvc/McDecayModeSvc"};
+// ApplicationMgr.ExtSvc += {"MCTruthInfo/MCTruthInfo"};
+// ApplicationMgr.ExtSvc += {"BeamInfoSvc/BeamInfoSvc"};
 McDecayModeSvc.NoTracingList = { 321, -321, 211, -211 };
+MCTruthInfo.Mother = 443;
+BeamInfoSvc.UseCbE = false;
+
 VeeVertex.LambdaReconstruction = false;
 VeeVertex.KShortReconstruction = true;
 

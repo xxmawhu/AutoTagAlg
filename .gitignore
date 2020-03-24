@@ -50,3 +50,6 @@ Makefile
 AutoTagAlg-00-00-01/LICENSE
 AutoTagAlg-00-00-01/README.org
 AutoTagAlg-00-00-01/.git*
+test/
+CVS/
+i386*

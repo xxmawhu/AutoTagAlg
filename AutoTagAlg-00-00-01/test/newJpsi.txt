@@ -13,8 +13,13 @@ AutoTagAlg.UseKinematicFit = false;
 AutoTagAlg.Ecm = 3.097;
 AutoTagAlg.MinChargedTracks = 1;
 AutoTagAlg.ReadBeamE=false;
+<<<<<<< HEAD
 AutoTagAlg.FID = {2212};
 AutoTagAlg.InfoLevel = 10;
+=======
+AutoTagAlg.FID = {3122};
+AutoTagAlg.InfoLevel = 0;
+>>>>>>> master
 
 PrimaryProtonSelector.RxyCut = 10.0;
 PrimaryProtonSelector.Vz0Cut = 20.0;
@@ -27,7 +32,11 @@ SignalCandidate.MaxMass = 10.0;
 ApplicationMgr.EvtMax = 300;
 
 // Set output level threshold (2=DEBUG, 3=INFO, 4=WARNING, 5=ERROR, 6=FATAL )
+<<<<<<< HEAD
 MessageSvc.OutputLevel = 5;
+=======
+MessageSvc.OutputLevel = 4;
+>>>>>>> master
 
 ApplicationMgr.HistogramPersistency = "ROOT";
 

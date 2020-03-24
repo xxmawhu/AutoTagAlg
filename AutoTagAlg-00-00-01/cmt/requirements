@@ -15,12 +15,16 @@ use VertexFit           VertexFit-*             Analysis
 
 use McDecayModeSvc      McDecayModeSvc-*        Utilities
 use GammaConv           GammaConv-*             Utilities
-use DataBaseReader DataBaseReader-* Utilities
 use DTagAlg DTagAlg-* Reconstruction
 
 use MCTruthMatchSvc MCTruthMatchSvc-* Utilities
 use BesStdSelector BesStdSelector-* Utilities 
 use HadronInfo HadronInfo-* Utilities
+use TupleSvc TupleSvc-* Utilities
+use MCTruthInfo MCTruthInfo-* Utilities
+use BeamInfoSvc BeamInfoSvc-00-* Utilities
+use PhotonConverSvc PhotonConverSvc-00-* Utilities
+use DCListSvc DCListSvc-00* Utilities
 
 apply_pattern component_library 
-library AutoTagAlg  *.cpp  util/*.cpp components/*.cpp
+library AutoTagAlg  *.cpp  util/*.cpp selector/*.cpp components/*.cxx
